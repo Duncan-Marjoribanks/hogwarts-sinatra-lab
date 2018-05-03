@@ -30,7 +30,18 @@ end
 
 
 
+##############################
 
+# classs methods below this line
+
+##############################
+
+def self.all()
+  sql = "SELECT * FROM students"
+  students_hash = SqlRunner.run(sql)
+  result = students_hash.map { |student| Student.new(student) }
+  return result
+end
 
 
 
