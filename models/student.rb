@@ -32,7 +32,7 @@ end
 
 ##############################
 
-# classs methods below this line
+# class methods below this line
 
 ##############################
 

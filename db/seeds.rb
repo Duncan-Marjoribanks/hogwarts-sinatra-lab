@@ -1,5 +1,5 @@
 require_relative('../models/student')
-require('pry')
+
 
 student1 = Student.new({
   "first_name" => "Hermiony",
@@ -24,7 +24,3 @@ student3 = Student.new({
   "age" => 15
   })
 student3.save
-
-
-binding.pry
-nil
