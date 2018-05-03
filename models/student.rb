@@ -43,6 +43,13 @@ def self.all()
   return result
 end
 
-
+def self.find(id)
+  sql = "SELECT * FROM students
+  WHERE id = $1"
+  values = [id]
+  individual_student = SqlRunner.run(sql, values)
+  result = Student.new(individual_student.first)
+  return result
+end
 
 end
