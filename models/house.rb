@@ -19,4 +19,13 @@ def save()
   SqlRunner.run(sql, values)
 end
 
+def self.all()
+  sql = "SELECT * FROM houses"
+  houses_hash = SqlRunner.run(sql)
+  result = houses_hash.map {|house|
+  House.new(house) }
+  return result
+end
+
+
 end
