@@ -8,7 +8,7 @@ def initialize(options)
   @id = options['id'].to_i
   @first_name = options['first_name']
   @second_name = options['second_name']
-  @house = options['house']
+  @house = options['house'].to_i
   @age = options['age'].to_i
 end
 
@@ -27,6 +27,12 @@ def save()
   @id = student_data.first()['id'].to_i
 end
 
+def house_name()
+sql = "SELECT name FROM houses WHERE id = $1"
+values = [@house]
+house_data = SqlRunner.run(sql, values)
+return House.new(house_data)
+end
 
 
 
